@@ -1,29 +1,28 @@
-import { useState} from "react"
-import { useEffect } from "react"
-import {getArticles} from "../../api-get"
+import { useState, useEffect} from "react"
+import getArticles from "../../api-get"
 
-const Articles = () =>{
+export const Articles = () => {
     
     const [articleList, setArticleList] = useState([])
 
     useEffect (() => {
         getArticles()
         .then((body) =>{
+            console.log(body)
             setArticleList(body)
+            console.log(body)
         })
         .catch((err) =>{
             console.error(err)
         })
-    }, []);
+    }, [])
 
     return (
         <div>
             {articleList.map((article) =>{
-                <p key={article.id}>{article.title}</p>
+                <p>{article}</p>
+                console.log('article', article)
             })}
         </div>
     )
 }
-
-
-export default Articles

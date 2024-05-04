@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import {Routes, Route} from "react-router-dom"
-import Articles from './components/Articles'
+import {Articles} from './components/Articles'
 function App() {
   return (
     <>
@@ -11,7 +11,7 @@ function App() {
         <Route path="/articles" element={<Articles />} />
       </Routes>
     </>
-  );
+  )
 }
 
 export default App

@@ -3,7 +3,7 @@ const newsUrl = axios.create({
     baseURL: 'https://backend-nc-project.onrender.com/api',
 });
 
-export const getArticles = () =>{
+const getArticles = () =>{
     return newsUrl.get(`/articles`)
     .then((res) =>{
         return res.data;
@@ -13,3 +13,5 @@ export const getArticles = () =>{
         throw err;
     })
 }
+
+export default getArticles
