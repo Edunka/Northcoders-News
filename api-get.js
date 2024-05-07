@@ -14,3 +14,14 @@ export const getArticles = () => {
             throw err;
         });
 };
+
+export const getArticleById = (article_id) => {
+    return newsUrl.get(`/articles/${article_id}`)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((err) => {
+            console.error(err);
+            throw err;
+        });
+};

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getArticles } from "../../api-get";
 import '../../src/Styling/article.css';
 import format from 'date-fns/format';
+import { Link } from "react-router-dom"
 
 export const Articles = () => {
     const [articleList, setArticleList] = useState([]);
@@ -25,14 +26,16 @@ export const Articles = () => {
                 <div>Loading articles...</div>
             ) : (
                 articleList.map((article) => (
-                    <a href={article.url} className="article-card" key={article.article_id} aria-label={`Read more about ${article.title}`}>
-                        <img className="article-image" src={article.article_img_url} alt={article.title} />
-                        <h2 className="article-title">{article.title}</h2>
+                    <div key={article.article_id} className="article-card" aria-label={`Read more about ${article.title}`}>
+                        <Link to={`${article.article_id}`}>
+                            <img className="article-image" src={article.article_img_url} alt={article.title} />
+                            <h2 className="article-title">{article.title}</h2>
+                        </Link>
                         <p className="article-info">Topic: {article.topic}</p>
                         <p className="article-info">Votes: {article.votes}</p>
                         <p className="article-info">Comments: {article.comment_count}</p>
                         <p className="article-info">Created: {format(new Date(article.created_at), 'MMMM dd, yyyy')}</p>
-                    </a>
+                    </div>
                 ))
             )}
         </div>

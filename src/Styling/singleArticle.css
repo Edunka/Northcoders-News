@@ -1,38 +1,28 @@
-.articles-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.article-card {
+.single-article-card{
     border: 3px solid #493838;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    margin-top:10px;
 }
-
-.article-card:hover {
+.single-article-card:hover{
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
-
-.article-image {
+.single-article-image {
     width: 100%;
     height: auto;
 }
 
-.article-title {
+.single-article-title {
     font-size: 1.2rem;
     padding: 10px;
     margin: 0;
 }
 
-.article-info {
+.single-article-info {
     font-size: 1rem;
     padding: 0 10px 10px;
     margin: 0;
     color: #555;
 }
-
-
