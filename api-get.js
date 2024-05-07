@@ -20,8 +20,11 @@ export const getArticleById = (article_id) => {
         .then((response) => {
             return response.data;
         })
-        .catch((err) => {
-            console.error(err);
-            throw err;
-        });
 };
+
+export const getComments = (article_id) =>{
+    return newsUrl.get(`/articles/${article_id}/comments`)
+    .then((response) =>{
+        return response.data
+    })
+}
