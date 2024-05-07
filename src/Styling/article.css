@@ -1,0 +1,52 @@
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.article-card {
+    border: 3px solid #493838;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+}
+
+.article-title {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 0;
+}
+
+.article-info {
+    font-size: 1rem;
+    padding: 0 10px 10px;
+    margin: 0;
+    color: #555;
+}
+.read-more-link {
+    display: block;
+    padding: 10px;
+    color: #007bff;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-top: auto;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.read-more-link:hover {
+    color: #0056b3;
+}
+
+
