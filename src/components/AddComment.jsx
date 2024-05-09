@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { PostComment } from '../../api-post';
+import { postComment } from '../../api-post';
 import '../Styling/Addcomment.css'
-export const AddComment = ({ articleId }) => {
+
+
+export const AddComment = ({ articleId, setComments }) => {
     const [loading, setLoading] = useState(false);
 
     const username = 'weegembump';
@@ -18,11 +20,13 @@ export const AddComment = ({ articleId }) => {
             body,
         };
 
-        PostComment(articleId, comment)
+        postComment(articleId, comment)
             .then((response) => {
-                window.location.reload();
                 form.reset();
-                return response.data
+                setComments((current) =>{
+                    return [ response.comment, ...current]
+                })
+                
             })
             .catch((err) => {
                 console.error(`Error adding comment:`, err);

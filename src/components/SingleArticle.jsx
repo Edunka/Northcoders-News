@@ -56,11 +56,11 @@ export const SingleArticle = () => {
 
     return (
         <>
-            {article && <ArticleCard article={article} />}
+            {article && <ArticleCard article={article}  setComments={setComments}/>}
             <h2 className="comments-header">Comments</h2>
             <div className="comments-container">
                 {comments.map((comment) => (
-                    <CommentCard key={comment.comment_id} comment={comment} />
+                    <CommentCard key={comment.comment_id} comment={comment} setComments={setComments}/>
                 ))}
             </div>
         </>
