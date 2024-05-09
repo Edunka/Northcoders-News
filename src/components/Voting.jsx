@@ -12,8 +12,7 @@ export const Voting = ({ articleId, initialVoteCount }) => {
         Vote(articleId, { inc_votes: voteChange,
             article_id: articleId
         })
-            .then((response) => {
-                window.location.reload();                
+            .then((response) => {               
                 setVoteCount(response.vote);
             })
             .catch((err) => {
@@ -26,6 +25,7 @@ export const Voting = ({ articleId, initialVoteCount }) => {
     return (
         <div>
             <button onClick={() => handleVote(-1)}>-</button>
+            <p>Votes:{voteCount}</p>
             <button onClick={() => handleVote(1)}>+</button>
             
         </div>

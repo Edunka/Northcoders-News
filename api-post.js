@@ -4,7 +4,7 @@ const newsUrl = axios.create({
     baseURL: 'https://backend-nc-project.onrender.com/api',
 });
 
-export const PostComment = (artileId, newComment) =>{
+export const postComment = (artileId, newComment) =>{
     return newsUrl.post(`/articles/${artileId}/comments`,
         newComment
     ).then((response) =>{
