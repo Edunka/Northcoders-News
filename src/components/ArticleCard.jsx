@@ -1,9 +1,8 @@
 import React from 'react';
 import format from 'date-fns/format';
 import '../../src/Styling/singleArticle.css';
-
+import { Voting } from './Voting';
 export const ArticleCard = ({ article }) => {
-    console.log('article', article)
     return (
         <div key={article.article_id} className="single-article-container">
             <div className="single-article-card">
@@ -15,6 +14,8 @@ export const ArticleCard = ({ article }) => {
                 <p className="single-article-info">Votes: {article.article.votes}</p>
                 <p className="single-article-info">Comments: {article.article.comment_count}</p>
                 <p className="single-article-info">Created: {format(new Date(article.article.created_at), 'MMMM dd, yyyy')}</p>
+
+                <Voting articleId={article.article.article_id} initialVoteCount={article.article.votes} />
             </div>
         </div>
     );
