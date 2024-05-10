@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { deleteComment } from '../../api-delete';
-
+import { UserNameContext } from '../contexts/userName';
 export const DeleteComment = ({ comment_id, commentUsername, setComments }) => {
     const [loading, setLoading] = useState(false);
     
-    const hardcodedUsername = 'weegembump';
-
+    const { userName } = useContext(UserNameContext);
     const handleCommentDelete = (event) => {
         event.preventDefault();
         setLoading(true);
@@ -26,7 +25,7 @@ export const DeleteComment = ({ comment_id, commentUsername, setComments }) => {
     };
 
     return (
-        commentUsername === hardcodedUsername && (
+        commentUsername === userName && (
             <button onClick={handleCommentDelete} disabled={loading}>
                 {loading ? 'Deleting...' : 'X'}
             </button>

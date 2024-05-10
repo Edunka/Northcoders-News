@@ -5,6 +5,7 @@ import {Articles} from './components/Articles'
 import '../src/Styling/index.css'
 import {SingleArticle} from './components/SingleArticle'
 import {Topics} from './components/Topics'
+
 function App() {
   return (
     <>
