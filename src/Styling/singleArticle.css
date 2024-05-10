@@ -53,6 +53,15 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.selectForFilteredTopics{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.articles-title-topics{
+    text-align: center;
+}
 
 @media (max-width: 768px) {
     .single-article-title,

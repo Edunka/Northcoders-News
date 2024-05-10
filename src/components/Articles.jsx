@@ -21,6 +21,7 @@ export const Articles = () => {
     }, []);
 
     return (
+        <>
         <div className="articles-container">
             {isLoading ? (
                 <div>Loading articles...</div>
@@ -39,5 +40,6 @@ export const Articles = () => {
                 ))
             )}
         </div>
+        </>
     );
 };

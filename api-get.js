@@ -20,6 +20,10 @@ export const getArticleById = (article_id) => {
         .then((response) => {
             return response.data;
         })
+        .catch((err) => {
+            console.error(err);
+            throw err;
+        });
 };
 
 export const getComments = (article_id) =>{
@@ -27,4 +31,30 @@ export const getComments = (article_id) =>{
     .then((response) =>{
         return response.data
     })
+    .catch((err) => {
+        console.error(err);
+        throw err;
+    });
+}
+
+export const getTopics = () =>{
+    return newsUrl.get('/topics')
+    .then((response) =>{
+        return response.data
+    })
+    .catch((err) =>{
+        console.error(err)
+        throw err;
+    })
+}
+
+export const getFilteredTopics = (topic) =>{
+    return newsUrl.get(`/articles?topic=${topic}`)
+    .then((response) =>{
+        return response.data
+    })
+    .catch((err) => {
+        console.error(err);
+        throw err;
+    });
 }

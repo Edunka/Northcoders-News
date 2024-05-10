@@ -12,6 +12,7 @@ const Header = () => {
             <button>Sign-Up</button>
             <button>Account</button>
             <button><Link to="/articles">Articles</Link></button>
+            <button><Link to="/topics">Topics</Link></button>
             </header>
           </>  
     )
