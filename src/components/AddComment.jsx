@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { postComment } from '../../api-post';
 import '../Styling/Addcomment.css'
-
+import { UserNameContext } from '../contexts/userName';
 
 export const AddComment = ({ articleId, setComments }) => {
     const [loading, setLoading] = useState(false);
 
-    const username = 'weegembump';
+    const { userName } = useContext(UserNameContext);
 
     const handleCommentSubmit = (event) => {
         event.preventDefault();
@@ -14,7 +14,7 @@ export const AddComment = ({ articleId, setComments }) => {
 
         const form = event.target;
         const body = form.elements.body.value;
-
+        const username = form.elements.username.value;
         const comment = {
             username,
             body,
@@ -45,7 +45,7 @@ export const AddComment = ({ articleId, setComments }) => {
                     <input
                         type="text"
                         name="username"
-                        value={username}
+                        value={userName}
                         readOnly
                     />
                 </div>
